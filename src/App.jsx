@@ -486,8 +486,11 @@ function Hero() {
 
         {/* Right — Stats card */}
         <div style={{
-          flex: "1 1 260px",
-          opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateX(40px)",
+          flex: "1 1 300px",
+          maxWidth: 600,
+          margin: "0 auto",
+          opacity: mounted ? 1 : 0, 
+          transform: mounted ? "none" : "translateX(40px)",
           transition: "all 0.8s ease 0.5s",
         }}>
         <div style={{

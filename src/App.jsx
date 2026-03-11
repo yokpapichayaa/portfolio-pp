@@ -490,37 +490,38 @@ function Hero() {
           opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateX(40px)",
           transition: "all 0.8s ease 0.5s",
         }}>
-          <div style={{
-            background: "rgba(173,255,47,0.04)",
-            border: "1px solid rgba(173,255,47,0.12)",
-            borderRadius: 24, padding: "40px 32px",
-            backdropFilter: "blur(20px)",
-            position: "relative", overflow: "hidden",
-          }}>
+        <div style={{
+          background: "rgba(173,255,47,0.04)",
+          border: "1px solid rgba(173,255,47,0.12)",
+          borderRadius: 24,
+           padding: "clamp(20px, 4vw, 40px) clamp(16px, 3vw, 32px)",
+          backdropFilter: "blur(20px)",
+          position: "relative", overflow: "hidden",
+        }}>
+        <div style={{
+          position: "absolute", top: -60, right: -60,
+          width: 200, height: 200, borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(173,255,47,0.12) 0%, transparent 70%)",
+        }} />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",gap: "clamp(12px, 2vw, 24px)", position: "relative" }}>
+          {STATS.map((s, i) => (
+            <StatItem key={i} stat={s} delay={i * 100} />
+          ))}
+        </div>
+        <div style={{ marginTop: "clamp(16px, 3vw, 32px)", paddingTop: "clamp(12px, 2vw, 24px)", borderTop: "1px solid rgba(173,255,47,0.1)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "clamp(8px, 2vw, 12px)" }}>
             <div style={{
-              position: "absolute", top: -60, right: -60,
-              width: 200, height: 200, borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(173,255,47,0.12) 0%, transparent 70%)",
-            }} />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, position: "relative" }}>
-              {STATS.map((s, i) => (
-                <StatItem key={i} stat={s} delay={i * 100} />
-              ))}
+              width: 44, height: 44, borderRadius: 10,
+              background: "rgba(173,255,47,0.12)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: 20,
+            }}>🎓</div>
+            <div>
+              <div style={{ color: "#fff", fontWeight: 700, fontSize: "clamp(11px, 1.5vw, 13px)",whiteSpace: "nowrap",overflow: "hidden",textOverflow: "ellipsis" }}>Suranaree University of Technology</div>
+              <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "clamp(10px, 1.2vw, 12px)", marginTop: 2 }}>B.Sc. Information Technology · 2014–2018</div>
             </div>
-            <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(173,255,47,0.1)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <div style={{
-                  width: 44, height: 44, borderRadius: 10,
-                  background: "rgba(173,255,47,0.12)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 20,
-                }}>🎓</div>
-                <div>
-                  <div style={{ color: "#fff", fontWeight: 700, fontSize: 13 }}>Suranaree University of Technology</div>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 12, marginTop: 2 }}>B.Sc. Information Technology · 2014–2018</div>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>

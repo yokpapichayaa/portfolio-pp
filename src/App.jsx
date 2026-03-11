@@ -486,7 +486,7 @@ function Hero() {
 
         {/* Right — Stats card */}
         <div style={{
-          flex: "1 1 300px",
+          flex: "1 1 260px",
           opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateX(40px)",
           transition: "all 0.8s ease 0.5s",
         }}>
@@ -494,7 +494,7 @@ function Hero() {
           background: "rgba(173,255,47,0.04)",
           border: "1px solid rgba(173,255,47,0.12)",
           borderRadius: 24,
-           padding: "clamp(20px, 4vw, 40px) clamp(16px, 3vw, 32px)",
+          padding: "clamp(16px, 3vw, 28px)",
           backdropFilter: "blur(20px)",
           position: "relative", overflow: "hidden",
         }}>
@@ -503,7 +503,7 @@ function Hero() {
           width: 200, height: 200, borderRadius: "50%",
           background: "radial-gradient(circle, rgba(173,255,47,0.12) 0%, transparent 70%)",
         }} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",gap: "clamp(12px, 2vw, 24px)", position: "relative" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",gap: "clamp(12px, 2vw, 24px)", position: "relative" }}>
           {STATS.map((s, i) => (
             <StatItem key={i} stat={s} delay={i * 100} />
           ))}
